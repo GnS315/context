@@ -12,8 +12,8 @@ function App() {
 
   return (
     <AuthContext.Provider value = {{isAuth, setIsAuth}}>
-      <Page />
-      <Page2 />
+      <Title1 />
+      <Title2 />
       <button onClick={changeAuth}>{buttonValue}</button>
     </AuthContext.Provider>
   )
@@ -23,7 +23,7 @@ function App() {
 * Или при помощи AuthContext.Consumer
 * */
 
-const Page = () => {
+const Title1 = () => {
   const {isAuth} = useContext(AuthContext)
   return (
     isAuth ?
@@ -31,10 +31,10 @@ const Page = () => {
       <h1>Не авторизован</h1>
   )
 }
-const Page2 = () => {
+const Title2 = () => {
   return (
     <AuthContext.Consumer>
-      {value => value.isAuth ? <h1>Авторизован2</h1> : <h1>Не авторизован2</h1>}
+      {value => value.isAuth ? <h1>Авторизован 2</h1> : <h1>Не авторизован 2</h1>}
     </AuthContext.Consumer>
   )
 }
